@@ -28,7 +28,7 @@ public class ApplicationTest {
     @Test
     public void typetext() {
         onView(withId(R.id.edittext))
-                .perform(typeText("meeting"), closeSoftKeyboard());
+                .perform(typeText("meet"), closeSoftKeyboard());
     }
 
     @Test
