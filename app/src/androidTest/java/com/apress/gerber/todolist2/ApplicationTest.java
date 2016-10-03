@@ -31,10 +31,13 @@ public class ApplicationTest {
                 .perform(typeText("meeting"), closeSoftKeyboard());
     }
 
-    @Test
-    public void button() {
-            onView(withId(R.id.button)).perform(click());
 
+        @Test
+        public void button() {
+            onView(withId(R.id.edittext))
+                    .perform(typeText("meeting"), closeSoftKeyboard());
+
+            onView(withId(R.id.button)).perform(click());
            // onView(withId(R.id.txtView)).check(matches(withText("To do list")));
         }
     }
