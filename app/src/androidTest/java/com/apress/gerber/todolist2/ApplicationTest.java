@@ -21,11 +21,11 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.core.IsNot.not;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class ApplicationTest {
-    private static final String VALID_PHONE_NUMBER = "123-345-6789";
 
     @Rule
     public ActivityTestRule mActivityRule = new ActivityTestRule<>(
@@ -37,48 +37,24 @@ public class ApplicationTest {
     }
 
     @Test
-    public void typetext() {
+    public void type_text() {
         onView(withId(R.id.edittext)).perform(typeText("meeting"));
         onView(withId(R.id.edittext))
                 .check(matches(withText("meeting")));
     }
 
     @Test
-    @Ignore
-        public void button() {
-            onView(withId(R.id.edittext))
-                    .perform(typeText("meeting"), closeSoftKeyboard());
 
-            onView(withId(R.id.button)).perform(click());
-          //  onView(withId(R.id.button)).check(matches());
-
-        
-        }
-
-    public void Item_notDisplayed(){
-      //   onView(withId(R.id.textview)).check(matches(not(isDisplayed())));
-    }
-
-    public void Item_Displayed() {
-        onView(withId(R.id.textview)).check(matches(isDisplayed()));
-    }
-
-    public void Item_Matched() {
+    public void test_button() {
+     //   onView(withId(R.id.textview)).check(matches(not(isDisplayed())));
         onView(withId(R.id.edittext))
                 .perform(typeText("meeting"), closeSoftKeyboard());
+        onView(withId(R.id.button)).perform(click());
         onView(withId(R.id.textview)).check(matches(withText("meeting")));
     }
 
-    //ボタンを押す前に表示されないことをテスト
-    //ボタンを押したら表示される
-    //でてきたものと一致する
-
 //テキストボックスを作成してedittextを表示
 
-
-      public void List_Item_Displayed(){
-     //   onView(withText(ITEM_ID)),check(matches(isDisplayed());
-    }
 
 
 }
