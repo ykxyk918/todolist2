@@ -46,7 +46,7 @@ public class ApplicationTest {
     @Test
 
     public void test_button() {
-     //   onView(withId(R.id.textview)).check(matches(not(isDisplayed())));
+        onView(withId(R.id.textview)).check(doesNotExist());
         onView(withId(R.id.edittext))
                 .perform(typeText("meeting"), closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
