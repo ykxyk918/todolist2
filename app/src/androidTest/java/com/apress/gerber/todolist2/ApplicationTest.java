@@ -21,7 +21,7 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.core.IsNot.not;
+
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
@@ -46,7 +46,7 @@ public class ApplicationTest {
     @Test
 
     public void test_button() {
-        onView(withId(R.id.textview)).check(doesNotExist());
+    //    onView(withId(R.id.textview)).check(doesNotExist());
         onView(withId(R.id.edittext))
                 .perform(typeText("meeting"), closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
